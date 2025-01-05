@@ -22,6 +22,11 @@ export const Map = ({ data }) => {
         zoom={10}
         style={{ height: "100vh", width: "100%" }}
         worldCopyJump={true}
+        maxBounds={[
+          [-90, -200],
+          [90, 200],
+        ]}
+        maxBoundsViscosity={1.0}
       >
         <TileLayer
           url={`https://{s}.basemaps.cartocdn.com/${
