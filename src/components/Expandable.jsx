@@ -1,7 +1,11 @@
-import { useState } from "react";
-import gearIcon from "../icons/settings-gear-icon.png";
+import { useState, useContext } from "react";
+import { IconSettingsSpark } from "@tabler/icons-react";
+import { NightModeContext } from "../contexts/night-mode";
+
 export const Expandable = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { isLightMode } = useContext(NightModeContext);
+  const toolbarClasses = `${isLightMode ? "toolbar--light" : "toolbar--dark"}`;
 
   const toggleOpen = () => {
     setIsOpen(!isOpen);
@@ -9,11 +13,13 @@ export const Expandable = ({ children }) => {
 
   return (
     <div className="toolbar">
-      <input
-        type="image"
+      <IconSettingsSpark
+        stroke={2}
+        width={48}
+        height={48}
         onClick={toggleOpen}
-        src={gearIcon}
-        className="toolbarbutton"
+        style={{ cursor: "pointer" }}
+        className={toolbarClasses}
       />
       {isOpen && children}
     </div>

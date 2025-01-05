@@ -8,7 +8,6 @@ body {
 }
 
 .toolbar {
-  color: white;
   position: fixed;
   display: flex;
   bottom: 2%;
@@ -16,30 +15,18 @@ body {
   z-index: 1000;
 }
 
-.toolbarbutton {
-  height: 3rem;
-  width: 3rem;
-  /* border-radius: 50%; */
+.toolbar--light {
+  color: black;
 }
 
-.toolbarbutton:hover {
-  height: 3rem;
-  width: 3rem;
-  background-color: rgb(100, 100, 100);
-  transition: 0.7s;
-  border-radius: 50%;
+.toolbar--dark {
+  color: white;
 }
 
-.toolbardarkmode {
-  height: 3rem;
-  width: 3rem;
-  /* border-radius: 50%; */
+.toolbar--dark:hover {
+  color: orange;
 }
 
-.toolbardarkmode:hover {
-  height: 3rem;
-  width: 3rem;
-  background-color: rgb(100, 100, 100);
-  transition: 0.7s;
-  border-radius: 50%;
+.toolbar--light:hover {
+  color: orange;
 }
