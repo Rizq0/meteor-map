@@ -13,20 +13,27 @@ const meteoriteIcon = new Icon({
 
 export const Map = ({ data }) => {
   const { isLightMode } = useContext(NightModeContext);
+
+  const mapClass = `leaflet-container ${
+    isLightMode ? "leaflet-container--light" : ""
+  }`;
   return (
     <>
       <Toolbar />
       <MapContainer
-        class="mapcontainer"
+        className={mapClass}
         center={[51.511493, -0.104432]}
         zoom={10}
-        style={{ height: "100vh", width: "100%" }}
+        style={{
+          height: "100vh",
+          width: "100%",
+        }}
         worldCopyJump={true}
         maxBounds={[
-          [-90, -200],
-          [90, 200],
+          [-90, -180],
+          [90, 180],
         ]}
-        maxBoundsViscosity={1.0}
+        maxBoundsViscosity={0.5}
       >
         <TileLayer
           url={`https://{s}.basemaps.cartocdn.com/${
