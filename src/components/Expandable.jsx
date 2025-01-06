@@ -19,6 +19,7 @@ export const Expandable = ({ children }) => {
         height={48}
         onClick={toggleOpen}
         style={{ cursor: "pointer" }}
+        title="Toggle Settings"
         className={toolbarClasses}
       />
       {isOpen && children}

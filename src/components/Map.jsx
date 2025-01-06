@@ -4,6 +4,7 @@ import { Icon } from "leaflet";
 import { Toolbar } from "./Toolbar";
 import { useContext } from "react";
 import { NightModeContext } from "../contexts/night-mode";
+import { IconToggleContext } from "../contexts/icon-toggle";
 import meteorIcon from "../icons/meteorite.png";
 
 const meteoriteIcon = new Icon({
@@ -13,6 +14,7 @@ const meteoriteIcon = new Icon({
 
 export const Map = ({ data }) => {
   const { isLightMode } = useContext(NightModeContext);
+  const { isIconShowing } = useContext(IconToggleContext);
 
   const mapClass = `leaflet-container ${
     isLightMode ? "leaflet-container--light" : ""
@@ -44,27 +46,29 @@ export const Map = ({ data }) => {
           minZoom="3"
           noWrap={true}
         />
-        {data.map((meteorite) => {
-          if (meteorite.geolocation) {
-            return (
-              <Marker
-                key={meteorite.name}
-                position={[
-                  meteorite.geolocation.latitude,
-                  meteorite.geolocation.longitude,
-                ]}
-                icon={meteoriteIcon}
-              >
-                <Popup>
-                  {meteorite.name} <br /> {meteorite.year} <br />
-                  {meteorite.mass}g
-                </Popup>
-              </Marker>
-            );
-          } else {
-            return null;
-          }
-        })}
+        {isIconShowing &&
+          data.map((meteorite) => {
+            if (meteorite.geolocation) {
+              return (
+                <Marker
+                  key={meteorite.name}
+                  position={[
+                    meteorite.geolocation.latitude,
+                    meteorite.geolocation.longitude,
+                  ]}
+                  icon={meteoriteIcon}
+                >
+                  <Popup>
+                    {meteorite.name} <br /> {meteorite.year} <br />
+                    {meteorite.mass}g
+                  </Popup>
+                </Marker>
+              );
+            } else {
+              return null;
+            }
+          })}
+        {}
       </MapContainer>
     </>
   );
