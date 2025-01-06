@@ -20,10 +20,10 @@
 - Modified Icons
 - Meteorites Plotted By Latitude and Longitude
 - Light/Dark Map Toggle
+- Toggleable Icons
 
 ## Planned Features
 
-- Toggleable Icons
 - Meteorite Filtering
 - Scaled Icons (based on meteorite size/weight)
 
