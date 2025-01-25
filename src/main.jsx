@@ -9,12 +9,12 @@ import { MantineProvider } from "@mantine/core";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <NightModeProvider>
-      <MantineProvider defaultColorScheme="dark">
+    <MantineProvider defaultColorScheme="dark">
+      <NightModeProvider>
         <IconToggleProvider>
           <App />
         </IconToggleProvider>
-      </MantineProvider>
-    </NightModeProvider>
+      </NightModeProvider>
+    </MantineProvider>
   </BrowserRouter>
 );
