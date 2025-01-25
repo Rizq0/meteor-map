@@ -4,6 +4,7 @@ export const Error = () => {
   return (
     <Notification
       withBorder
+      withCloseButton={false}
       color="red"
       title="There has been an error fetching data."
     >
