@@ -7,6 +7,7 @@ import { NightModeContext } from "../contexts/night-mode";
 import { IconToggleContext } from "../contexts/icon-toggle";
 import meteorIcon from "../icons/meteorite.png";
 import { LoadingOverlay, Box } from "@mantine/core";
+import { Error } from "./Error";
 
 const meteoriteIcon = new Icon({
   iconUrl: meteorIcon,
@@ -29,6 +30,7 @@ export const Map = ({ data, loading, error }) => {
           overlayProps={{ radius: "sm", blur: 2 }}
         />
         <Toolbar />
+        {error && <Error />}
         <MapContainer
           className={mapClass}
           center={[51.511493, -0.104432]}

@@ -10,12 +10,14 @@ import {
 } from "@tabler/icons-react";
 
 export const Toolbar = () => {
-  const { isLightMode, setLightMode } = useContext(NightModeContext);
+  const { isLightMode, setLightMode, toggleColorScheme } =
+    useContext(NightModeContext);
   const { isIconShowing, setIconShowing } = useContext(IconToggleContext);
   const toolbarClasses = `${isLightMode ? "toolbar--light" : "toolbar--dark"}`;
 
   const activateTheme = () => {
     setLightMode(!isLightMode);
+    toggleColorScheme();
   };
 
   const activateIconToggle = () => {

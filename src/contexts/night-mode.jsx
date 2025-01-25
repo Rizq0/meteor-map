@@ -7,12 +7,10 @@ export const NightModeProvider = ({ children }) => {
   const [isLightMode, setLightMode] = useState(false);
   const { toggleColorScheme } = useMantineColorScheme();
 
-  useEffect(() => {
-    toggleColorScheme();
-  }, [isLightMode]);
-
   return (
-    <NightModeContext.Provider value={{ isLightMode, setLightMode }}>
+    <NightModeContext.Provider
+      value={{ isLightMode, setLightMode, toggleColorScheme }}
+    >
       {children}
     </NightModeContext.Provider>
   );
