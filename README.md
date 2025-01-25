@@ -21,6 +21,8 @@
 - Meteorites Plotted By Latitude and Longitude
 - Light/Dark Map Toggle
 - Toggleable Icons
+- API Error Handling
+- API Loading States
 
 ## Planned Features
 
@@ -33,6 +35,7 @@
 - Leaflet: A popular open-source JavaScript library for interactive maps.
 - Vite: A fast build tool and development server for modern web projects.
 - Axios: A promise-based HTTP client for making requests to APIs.
+- Mantine: A lightweight and easy-to-use library that provides a wide range of components and hooks.
 
 ## Installation
 
